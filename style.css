@@ -72,7 +72,7 @@ header {
 .menu-icon {
   background-color: transparent;
   border: none;
-  font-size: 24px;
+  font-size: 20px;
   cursor: pointer;
 }
 nav {
@@ -447,6 +447,9 @@ footer ul li:hover {
   }
 }
 @media screen and (max-width: 1200px) {
+  nav{
+padding: 14px 0;
+  }
   .logo {
     font-size: 24px;
     font-weight: 500;
@@ -581,6 +584,7 @@ footer ul li:hover {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 0;
   }
   #footer-bottom p {
     text-align: center;
