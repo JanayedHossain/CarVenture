@@ -17,6 +17,45 @@
   <body class="primary-font">
     <!-- Header Section -->
 
+    <header class="font-inter">
+      <!-- Desktop View -->
+      <nav class="container flex-center desktop-view">
+        <!-- Logo -->
+        <h3 class="logo"><span>Car</span>Venture</h3>
+        <!-- Navbar Items -->
+        <ul class="flex-center font-roboto">
+          <li>Home</li>
+          <li>Shop</li>
+          <li>Product</li>
+          <li>Blog</li>
+          <li>Contact Us</li>
+        </ul>
+        <!-- Nav Button -->
+        <button class="btn bg-primary">Log in</button>
+      </nav>
+      <!-- Mobile View -->
+      <nav class="container mobile-view">
+        <!-- Logo -->
+        <div>
+          <button class="menu-icon" onclick="toggleMenu()">☰</button>
+        </div>
+        <h3 class="logo"><span>Car</span>Venture</h3>
+        <div>
+          <!-- Navbar Items -->
+          <ul class="font-roboto mobile-menu">
+            <li>Home</li>
+            <li>Shop</li>
+            <li>Product</li>
+            <li>Blog</li>
+            <li>Contact Us</li>
+            <li>
+              <button class="btn bg-primary">Log in</button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
     <!-- Main Section -->
     <main>
       <!-- Hero Section -->
@@ -373,5 +412,7 @@
         </div>
       </div>
     </footer>
+    <!-- Link to Javascript file -->
+    <script src="script.js"></script>
   </body>
 </html>

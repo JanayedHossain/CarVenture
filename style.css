@@ -62,12 +62,26 @@ header {
   background-color: white;
   box-shadow: 0 0 4px 1.5px rgba(0, 0, 0, 0.1);
 }
+
+.desktop-view {
+  display: block;
+}
+.mobile-view {
+  display: none !important;
+}
+.menu-icon {
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
 nav {
   padding: 25px 0;
   justify-content: space-between;
 }
 nav ul {
   gap: 50px;
+  display: block;
 }
 nav ul li {
   list-style: none;
@@ -126,8 +140,13 @@ main {
 #hero button {
   background-color: #ffffff;
   color: black;
-  border: #ffffff;
+  border: 1px solid #ffffff;
   margin-top: 40px;
+  transition: 0.3s;
+}
+#hero button:hover {
+  background-color: transparent;
+  color: white;
 }
 #find-filter {
   position: relative;
@@ -294,6 +313,7 @@ footer {
 footer ul li {
   list-style: none;
   padding-top: 12px;
+  cursor: pointer;
 }
 footer ul li img {
   padding-right: 8px;
@@ -307,8 +327,12 @@ hr {
   margin-bottom: 8px;
 }
 
-#footer-bottom li {
-  padding: 0;
+footer ul li:hover {
+  text-decoration: underline;
+}
+
+#footer-bottom ul {
+  gap: 24px;
 }
 
 /* Shared */
@@ -338,6 +362,11 @@ hr {
   font-size: 16px;
   border-radius: 6px;
   font-weight: 500;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: var(--primary-color);
+  color: white;
 }
 .read-more-btn {
   gap: 10px;
@@ -346,9 +375,13 @@ hr {
   font-weight: 500;
   font-size: 16px;
   cursor: pointer;
+  transition: 0.3s;
 }
 .read-more-btn p {
   text-decoration: underline;
+}
+.read-more-btn:hover {
+  gap: 20px;
 }
 .card {
   display: flex;
@@ -378,17 +411,39 @@ hr {
 .bg-primary {
   background-color: var(--primary-color);
   color: white !important;
+  transition: 0.3s;
 }
-
+.bg-primary:hover {
+  background-color: black;
+  border: 1px solid black;
+}
 @media screen and (max-width: 1200px) {
- #hero h1 {
-    font-size: 8px;
+  .desktop-view {
+    display: none !important;
   }
-   #find-filter #location {
-    width: 260px;
+
+  .mobile-view {
+    display: flex !important;
+    justify-content: start;
+    align-items: center;
+    gap: 5px;
   }
-    #about-image img {
-    width: 90%;
+  .mobile-menu {
+    position: absolute;
+    top: -300%;
+    left: 0;
+    background-color: white;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transition: 0.3s;
+  }
+  .mobile-menu.active {
+    top: 100%;
+    opacity: 1;
+  }
+  .mobile-menu li {
+    margin-bottom: 16px;
   }
 }
 @media screen and (max-width: 1200px) {
@@ -400,7 +455,7 @@ hr {
     height: 90vh;
   }
   #hero h1 {
-    font-size: 35px;
+    font-size: 32px;
   }
   #hero p {
     font-size: 14px;
@@ -423,7 +478,7 @@ hr {
     font-size: 12px;
   }
   #find-filter #location {
-    width: 300px;
+    width: 280px;
     padding-bottom: 6px;
     font-size: 14px;
   }
@@ -461,7 +516,7 @@ hr {
     justify-content: center;
   }
   #about-image img {
-    width: 80%;
+    width: 90%;
   }
 
   article {
@@ -471,28 +526,6 @@ hr {
     display: flex;
     justify-content: center;
     margin-bottom: 24px;
-  }
-
-  .container {
-    width: 95%;
-  }
-  .section-title {
-    font-size: 22px;
-  }
-  .section-description {
-    font-size: 14px;
-  }
-  .btn {
-    padding: 8px 30px;
-    font-size: 12px;
-  }
-  .read-more-btn {
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-  }
-  .read-more-btn img {
-    width: 14px;
   }
 
   #vehicle {
@@ -576,6 +609,30 @@ hr {
   footer #information ul {
     padding-bottom: 9px;
   }
+  /* Shared */
+
+  .container {
+    width: 95%;
+  }
+  .section-title {
+    font-size: 22px;
+  }
+  .section-description {
+    font-size: 14px;
+  }
+  .btn {
+    padding: 8px 30px;
+    font-size: 12px;
+  }
+
+  .read-more-btn {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+  }
+  .read-more-btn img {
+    width: 14px;
+  }
 }
 @media screen and (min-width: 576px) and (max-width: 1400px) {
   .footer-container #footer-top {
@@ -583,6 +640,9 @@ hr {
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1400px) {
+  #hero h1 {
+    font-size: 48px;
+  }
   #about-container,
   #vehicle-container,
   #services-container,
